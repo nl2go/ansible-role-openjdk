@@ -4,4 +4,4 @@
   tasks:
     - name: Verify
       debug:
-        msg: Verify ZooKeeper installation
+        msg: Verify OpenJDK installation

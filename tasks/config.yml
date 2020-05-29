@@ -1,4 +1,4 @@
 ---
 - name: Config
   debug:
-    msg: Config ZooKeeper
+    msg: Config OpenJDK

@@ -15,5 +15,6 @@ galaxy_info:
       versions:
         - all
   galaxy_tags:
-    - zookeeper
+    - java
+    - openjdk
 dependencies: []
