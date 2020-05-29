@@ -1,4 +1,1 @@
 ---
-- name: Config
-  debug:
-    msg: Config OpenJDK

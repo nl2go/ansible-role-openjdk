@@ -1,4 +1,4 @@
 ---
-- name: Install
-  debug:
-    msg: Install zookeeper
+- name: Install OpenJDK
+  package:
+    name: openjdk-11-jdk

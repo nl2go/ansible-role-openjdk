@@ -1,7 +1,11 @@
 ---
-- name: Verify keepalived
+- name: Verify OpenJDK installation and configuration
   hosts: all
   tasks:
-    - name: Verify
-      debug:
-        msg: Verify OpenJDK installation
+    - name: Get java version
+      command: java --version
+      register: java_version_result
+    - name: Verify java version
+      assert:
+        that:
+          - "'openjdk 11' in java_version_result.stdout"
