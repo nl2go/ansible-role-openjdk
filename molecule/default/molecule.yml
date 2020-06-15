@@ -5,9 +5,9 @@ lint: |
   set -e
   yamllint .
 platforms:
-  - name: instance
+  - name: ${MOLECULE_TEST_SCOPE:-default}-instance
     server_type: cx11
-    image: debian-10
+    image: ${MOLECULE_PLATFORM:-debian-10}
 provisioner:
   name: ansible
   config_options:
