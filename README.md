@@ -11,6 +11,18 @@ An Ansible Role that manages installation and configuration of [OpenJDK](https:/
 
 Available variables listed below, along with default values (see `defaults/main.yml`):
 
+    openjdk_dir: /opt/openjdk
+
+Storage directory.
+
+    openjdk_url: "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz"
+
+Distribution download URL.
+
+    openjdk_version: 11.0.2
+    
+Distribution version.    
+
 ## Dependencies
 
 None.
