@@ -5,6 +5,7 @@
     - name: Get java version
       command: java --version
       register: java_version_result
+      changed_when: no
     - name: Verify java version
       assert:
         that:

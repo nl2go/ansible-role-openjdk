@@ -1,5 +1,3 @@
 ---
-  - import_tasks: install.yml
+  - include_tasks: install.yml
     tags: [openjdk, openjdk_install, install]
-  - import_tasks: config.yml
-    tags: [openjdk, openjdk_config, config]

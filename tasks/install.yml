@@ -1,4 +1,25 @@
 ---
-- name: Install OpenJDK
-  package:
-    name: openjdk-11-jdk
+- name: Create OpenJDK dir
+  file:
+    path: "{{ openjdk_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Create OpenJDK version dir
+  file:
+    path: "{{ openjdk_dir }}/{{ openjdk_version }}"
+    state: directory
+    mode: '0755'
+  register: openjdk_version_dir
+
+- name: Download OpenJDK
+  unarchive:
+    src: "{{ openjdk_url }}"
+    dest: "{{ openjdk_dir }}/{{ openjdk_version }}"
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+  when: openjdk_version_dir.changed
+
+- name: Link OpenJDK
+  shell: "for bin in /opt/openjdk/11.0.2/bin/*; do update-alternatives --install /usr/bin/$(basename $bin) $(basename $bin) $bin 100; done"
+  when: openjdk_version_dir.changed
